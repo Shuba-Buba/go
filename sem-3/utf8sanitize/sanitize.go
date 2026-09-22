@@ -2,7 +2,27 @@
 
 package utf8sanitize
 
-// Sanitize заменяет невалидные bytes на U+FFFD.
+import (
+	"strings"
+	"unicode/utf8"
+)
+
 func Sanitize(input string) (normalized string, invalidBytes int) {
-	return input, 0
+	var b strings.Builder
+	b.Grow(len(input))
+
+	for i := 0; i < len(input); {
+		r, size := utf8.DecodeRuneInString(input[i:])
+		if r == utf8.RuneError && size == 1 {
+			b.WriteRune(utf8.RuneError)
+			invalidBytes++
+			i++
+			continue
+		}
+
+		b.WriteRune(r)
+		i += size
+	}
+
+	return b.String(), invalidBytes
 }
