@@ -181,5 +181,8 @@ sem-2/
   permissions/
   treetransform/
 sem-3/
-  ...
+  dedup/
+  slicestack/
+  timeline/
+  utf8sanitize/
 ```
