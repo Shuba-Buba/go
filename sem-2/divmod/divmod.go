@@ -9,7 +9,9 @@ var ErrDivisionByZero = errors.New("division by zero")
 
 // DivMod возвращает частное и остаток от деления dividend на divisor.
 func DivMod(dividend, divisor int) (quotient, remainder int, err error) {
-	_, _ = dividend, divisor
+	if divisor == 0 {
+		return 0, 0, ErrDivisionByZero
+	}
 
-	return 0, 0, nil
+	return dividend / divisor, dividend % divisor, nil
 }
