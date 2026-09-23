@@ -1,0 +1,57 @@
+# ---- macOS ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ---- Go ----
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace / build cache
+/bin/
+/vendor/
+go.work
+go.work.sum
+
+# Coverage
+*.cover
+coverage.out
+coverage.html
+
+# ---- JetBrains (GoLand/IDEA) ----
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ---- VS Code ----
+.vscode/
+*.code-workspace
+
+# ---- Env / secrets ----
+.env
+.env.local
+
+# ---- Logs / temp ----
+*.log
+tmp/
+temp/
