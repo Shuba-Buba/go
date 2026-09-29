@@ -2,6 +2,22 @@
 
 package gauge
 
-func (g *Gauge) Add(delta int) error { return nil }
-func (g Gauge) Value() int           { return 0 }
-func (g Gauge) String() string       { return "" }
+import (
+	"fmt"
+)
+
+func (g *Gauge) Add(delta int) error {
+	if g.level+delta < 0 {
+		return ErrNegative
+	}
+	g.level += delta
+	return nil
+}
+
+func (g Gauge) Value() int {
+	return g.level
+}
+
+func (g Gauge) String() string {
+	return fmt.Sprintf("level=%d", g.level)
+}
