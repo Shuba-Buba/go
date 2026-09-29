@@ -185,4 +185,9 @@ sem-3/
   slicestack/
   timeline/
   utf8sanitize/
+sem-4/
+  countwriter/
+  fallback/
+  gauge/
+  readclose/
 ```
