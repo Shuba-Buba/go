@@ -190,4 +190,10 @@ sem-4/
   fallback/
   gauge/
   readclose/
+sem-5/
+  first/
+  gate/
+  generate/
+  maplimit/
+  merge/
 ```
