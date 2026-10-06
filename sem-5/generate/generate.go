@@ -4,6 +4,11 @@ package generate
 
 func Generate(n int) <-chan int {
 	ch := make(chan int)
-	close(ch)
+	go func() {
+		defer close(ch)
+		for i := 0; i < n; i++ {
+			ch <- i
+		}
+	}()
 	return ch
 }
