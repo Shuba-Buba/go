@@ -191,9 +191,9 @@ sem-4/
   gauge/
   readclose/
 sem-5/
-  collect/
+  first/
   gate/
   generate/
-  parallel/
-  squarepipe/
+  maplimit/
+  merge/
 ```

@@ -1,8 +1,8 @@
 //go:build !solution
 
-package squarepipe
+package merge
 
-func Square(in <-chan int) <-chan int {
+func Merge(chs ...<-chan int) <-chan int {
 	out := make(chan int)
 	close(out)
 	return out
