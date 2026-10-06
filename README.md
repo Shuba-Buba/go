@@ -190,4 +190,10 @@ sem-4/
   fallback/
   gauge/
   readclose/
+sem-5/
+  collect/
+  gate/
+  generate/
+  parallel/
+  squarepipe/
 ```
