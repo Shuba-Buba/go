@@ -196,4 +196,10 @@ sem-5/
   generate/
   maplimit/
   merge/
+sem-6/
+  fuzzcase/
+  parallelcase/
+  tablecases/
+  testcleanup/
+  testhelper/
 ```
