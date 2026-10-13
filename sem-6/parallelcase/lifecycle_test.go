@@ -19,13 +19,13 @@ func TestParallelFixture(t *testing.T) {
 		}
 
 		// TODO: сохраните ресурс до завершения обоих параллельных подтестов.
-		defer func() {
+		t.Cleanup(func() {
 			if err := os.Remove(path); err != nil {
 				t.Error(err)
 			}
 
 			events <- "cleanup"
-		}()
+		})
 
 		for _, name := range []string{"first", "second"} {
 			t.Run(name, func(t *testing.T) {

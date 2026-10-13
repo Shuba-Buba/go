@@ -2,10 +2,20 @@
 
 package testhelper
 
-func assertEqual(_ testingT, _, _ int) {
-	panic("implement assertEqual")
+import (
+	"strings"
+)
+
+func assertEqual(t testingT, got, want int) {
+	t.Helper()
+	if got != want {
+		t.Errorf("assertEqual failed: %d and %d are not equal", got, want)
+	}
 }
 
-func assertContains(_ testingT, _, _ string) {
-	panic("implement assertContains")
+func assertContains(t testingT, s, substr string) {
+	t.Helper()
+	if !strings.Contains(s, substr) {
+		t.Errorf("assertContains faild: %q is not in %q", s, substr)
+	}
 }
