@@ -1,0 +1,3 @@
+# example.org/workshop/catalog v1.0.0
+## explicit; go 1.27.0
+example.org/workshop/catalog
