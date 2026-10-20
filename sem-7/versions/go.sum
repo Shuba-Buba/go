@@ -1,0 +1,8 @@
+example.org/workshop/cart v1.0.0 h1:RVgG3F9FiBYpIRN9iK/fnPJnDST7QdtX0saeBPr4NUA=
+example.org/workshop/cart v1.0.0/go.mod h1:w/MjZ+VMsAY4L6EhIviJisdjZTgCz5C4xs4IC+I+zRk=
+example.org/workshop/catalog v1.0.0 h1:4Gwyvoh2flUPM/jGzfffhV6JTMCqUx0KOKGF7EtHrPA=
+example.org/workshop/catalog v1.0.0/go.mod h1:OFUf3jyepHFwqvXgyyfaDagiwXyHvvitBXxX+4pEJFo=
+example.org/workshop/catalog v1.1.0 h1:IVtlqO4YyIjU6svNVfh8f83KWa/gU3e1qh1PcC2gTPA=
+example.org/workshop/catalog v1.1.0/go.mod h1:OFUf3jyepHFwqvXgyyfaDagiwXyHvvitBXxX+4pEJFo=
+example.org/workshop/report v1.0.0 h1:jP7spaQoqOjHDOyPrVcBVWbftHH2mc7MiuijUMG4838=
+example.org/workshop/report v1.0.0/go.mod h1:YsESKqDCUVj2E/DV5iH1ILbMG2yGYZRp47LCi6rcH+w=

@@ -202,4 +202,10 @@ sem-6/
   tablecases/
   testcleanup/
   testhelper/
+sem-7/
+  packages/
+  workspace/
+  versions/
+  vendor/
+  proxy/
 ```
