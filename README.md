@@ -217,4 +217,7 @@ sem-9/
   linkstore/
   accesslog/
   linkcheck/
+sem-10/
+  readinglist/
+  printqueue/
 ```
