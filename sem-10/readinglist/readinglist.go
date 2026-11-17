@@ -9,21 +9,68 @@ import (
 
 // Add saves a book and returns its database ID.
 func Add(ctx context.Context, db *sql.DB, title, author string) (int64, error) {
-	_, _, _, _ = ctx, db, title, author
+	result, err := db.ExecContext(
+		ctx,
+		"INSERT INTO books (title, author) VALUES (?, ?)",
+		title, author,
+	)
+	if err != nil {
+		return 0, err
+	}
 
-	panic("TODO: implement Add")
+	return result.LastInsertId()
 }
 
 // ByAuthor returns the author's books ordered by title.
 func ByAuthor(ctx context.Context, db *sql.DB, author string) ([]Book, error) {
-	_, _, _ = ctx, db, author
+	rows, err := db.QueryContext(
+		ctx,
+		"SELECT id, title FROM books WHERE author = ? ORDER BY title ASC",
+		author,
+	)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
 
-	panic("TODO: implement ByAuthor")
+	books := make([]Book, 0)
+
+	for rows.Next() {
+		var book Book
+
+		if err := rows.Scan(&book.ID, &book.Title); err != nil {
+			return nil, err
+		}
+
+		books = append(books, book)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return books, nil
 }
 
 // Remove deletes the book with the given ID.
 func Remove(ctx context.Context, db *sql.DB, id int64) error {
-	_, _, _ = ctx, db, id
+	result, err := db.ExecContext(
+		ctx,
+		"DELETE FROM books WHERE id = ?",
+		id,
+	)
+	if err != nil {
+		return err
+	}
 
-	panic("TODO: implement Remove")
+	affected, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+
+	if affected == 0 {
+		return sql.ErrNoRows
+	}
+
+	return nil
 }
