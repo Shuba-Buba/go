@@ -220,4 +220,8 @@ sem-9/
 sem-10/
   readinglist/
   printqueue/
+sem-11/
+  readings/
+  catalog/
+  treewalk/
 ```
