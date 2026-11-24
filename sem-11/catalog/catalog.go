@@ -4,7 +4,17 @@ package catalog
 
 // IndexByID строит индекс при условии, что все идентификаторы уникальны.
 func IndexByID[K comparable, T Identified[K]](records []T) (map[K]T, bool) {
-	_ = records
+	index := make(map[K]T, len(records))
 
-	panic("TODO: implement IndexByID")
+	for _, record := range records {
+		id := record.ID()
+
+		if _, exists := index[id]; exists {
+			return nil, false
+		}
+
+		index[id] = record
+	}
+
+	return index, true
 }
